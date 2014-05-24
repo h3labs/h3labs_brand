@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>H3 Laboratories "Atom" Branding</title>
+<style type="text/css">
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Condensed);
+body {
+	background-color: #000;
+	color: #ccc;
+	font-family: Helvetic, Arial, sans-serif;
+	font-size: 10pt;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+h1, h2, h3, h4, h5, h6, legend {
+	color: #fc0;
+	font-family: 'Ubuntu Condensed', Vinque;
+}
+h1, h2, h3, h4, h5, h6 {
+	text-shadow: .05em .05em .15em #000;
+}
+ul {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+li {
+	margin-left: 1em;
+}
+ul li:before {
+	content: "";
+	width: .4em;
+	height: .4em;
+	background-color: #fc0;
+	float: left;
+	margin: .4em .5em 0 0;
+	border-radius: 50%;
+	box-shadow: .05em .05em .15em #000;
+}
+#intro {
+	position: absolute;
+	top: 1em;
+	left: 1em;
+	bottom: 1em;
+	right: 1em;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	padding: 1em;
+	box-shadow: 0 0 15px #fc0, inset 3px 3px 10px #000;
+	font-size: 2rem;
+	background: #000; /* Old browsers */
+	background: -moz-linear-gradient(top, #333333 0%, #000000 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#333333), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #333333 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #333333 0%,#000000 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #333333 0%,#000000 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #333333 0%,#000000 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+
+
+}
+#intro h1 {
+	margin-top: 0;
+}
+#begin {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	text-align: center;
+}
+#logo_present, #logoalt_present, #shirt_present, #card_present {
+	display: none;
+	z-index: 10;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 1em;
+	min-height: 30px;
+	background: #000; /* Old browsers */
+	background: -moz-linear-gradient(top, #333333 0%, #000000 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#333333), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #333333 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #333333 0%,#000000 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #333333 0%,#000000 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #333333 0%,#000000 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+
+}
+#logo_present > *, #logoalt_present > *, #shirt_present > *, #card_present > * {
+	display: inline-block;
+}
+#logo_display, #logoalt_display, #shirt_display, #card_display {
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+#logo_display.black {
+	background-color: #000;
+}
+#logo_display.white, #logoalt_display {
+	background-color: #fff;
+}
+#logo {
+	border: 0 none;
+	display: block;
+	height: 277px;
+	margin-bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	top: 37.5%;
+	width: 1200px;
+}
+
+#logoalt_roundel {
+	display: block;
+	position: absolute;
+	top: 17.5%;
+	left: 10%;
+}
+#logoalt_short {
+	display: block;
+	position: absolute;
+	top: 17.5%;
+	right: 10%;
+}
+
+#shirt_display {
+	background-color: #fff;
+}
+
+#shirt, #card {
+	border: 0 none;
+	display: block;
+	margin-bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	top: 17.5%;
+}
+#card {
+	border: 0 none;
+	display: block;
+	margin-bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	top: 15%;
+	box-shadow: .5em .5em 2em rgba(0, 0, 0, .5); 
+}
+#card_display {
+	background-color: #fff;
+}
+
+</style>
+<link rel="stylesheet" href="css/jquery-ui-1.10.4.custom.css" />
+<link rel="icon" type="image/png" href="images/favicon.png" />
+<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript">
+
+var logo_bg = 'black', logo_phase = 'mono';
+var shirt_color = 'black', shirt_style = 'logo';
+
+var slides = {
+	intro: 0,
+	logo: 1,
+	logoalt: 2,
+	shirt: 3,
+	card: 4
+};
+
+var cur_slide = 0;
+var max_slide = -1;
+
+var i;
+
+for (i in slides) {
+	if (slides.hasOwnProperty(i)) {
+		max_slide++;
+	}
+}
+
+delete i;
+		
+
+var setSlide = function() {
+	var me = $(this);
+	var id = me.attr('id').replace('slide_control_', '');
+	var slide = id.split('_')[0];
+	var dir = id.split('_')[1];
+	var i;
+
+	if (dir == 'next') {
+console.log('cur: '+ cur_slide + '; max: ' + max_slide);
+		if (cur_slide == max_slide) {
+			cur_slide = 0;
+		}
+		else {
+			cur_slide++;
+		}
+	}
+	else {
+		if (cur_slide > 0) {
+			cur_slide--;
+		}
+	}
+
+	for (i in slides) {
+		if (slides.hasOwnProperty(i) && slides[i] == cur_slide) {
+			target_slide = i;
+		}
+	}
+
+	$('body > *').hide();
+	
+
+	$('body > *[id^=' + target_slide + (cur_slide == 0 ? '' : '_') + ']').show();
+
+	if (target_slide == 'logo') {
+		$('#logo_display').removeClass('white black').addClass(logo_bg);
+		setlogo();
+	}
+
+	if (target_slide == 'shirt') {
+		setshirt();
+	}
+
+	return false;
+}
+
+var setlogo = function() {
+	if (typeof logo_bg == 'undefined' && typeof logo_phase == 'undefined') {
+		return false;
+	}
+console.log('setLogo; logo_bg: ' + logo_bg + '; logo_phase: ' + logo_phase);
+	var l = $('#logo');
+	
+	l.attr('src', 'images/logo_master_j_' + logo_phase + '_on_' + logo_bg + '.png');
+}
+
+var setshirt = function() {
+	if (typeof shirt_style == 'undefined' && typeof shirt_color == 'undefined') {
+		return false;
+	}
+console.log('setshirt; shirt_style: ' + shirt_style + '; shirt_color: ' + shirt_color);
+	var l = $('#shirt');
+	
+	l.attr('src', 'images/shirt_' + shirt_color + '_' + shirt_style + '.png');
+}
+
+
+$(document).ready(function () {
+	$('div[id$=_slide_bset]').buttonset().css({position: 'absolute', right: '1em'});
+	$('a.slidecontrol').button({text: true}).click(setSlide);
+//	$('a.slidecontrol').button({text: true}).click(setSlide);
+	
+	$('a.slidecontrol[id$=prev]').button('option','icons', {primary: 'ui-icon-circle-arrow-w'});
+	$('a.slidecontrol[id$=next]').not('#slide_control_intro_next').button('option','icons', {secondary: 'ui-icon-circle-arrow-e'});
+	
+	$('#logo_bg_bset, #logo_phase_bset, #shirt_color_bset, #shirt_style_bset').buttonset();
+
+	$('#logo_bg_bset a').click(function () {
+		var me = $(this);
+		logo_bg = me.attr('id').split('_')[2];
+		
+		$('#logo_display').removeClass('white black').addClass(logo_bg);
+		setlogo();
+
+		return false;
+	});
+
+	$('#logo_phase_bset a').click(function () {
+		var me = $(this);
+		logo_phase = me.attr('id').split('_')[2];
+		
+		$('#logo_display').removeClass('white black').addClass(logo_bg);
+		setlogo();
+		
+		return false;
+	});
+	
+
+
+
+	$('#shirt_color_bset a').click(function () {
+		var me = $(this);
+		shirt_color = me.attr('id').split('_')[2];
+		
+		setshirt();
+
+		return false;
+	});
+
+	$('#shirt_style_bset a').click(function () {
+		var me = $(this);
+		shirt_style = me.attr('id').split('_')[2];
+		
+		setshirt();
+		
+		return false;
+	});
+
+	$('a').hover(function() {
+		window.status = '';
+		return false;
+	});
+});
+</script>
+</head>
+<body>
+	<div id="intro">
+		<h1>H3 Laboratories "Atom" Branding</h1>
+		
+		<p>This branding package is presented to the H3 Laboratories Board of Directors for consideration.</p>
+		<ul>
+			<li>Original Concept: Leo</li>
+			<li>Execution: Marty</li>
+		</ul>
+		<p id="begin"><a href="#" id="slide_control_intro_next" class="slidecontrol">Begin</a></p>
+	</div>
+
+	<div id="logo_present">
+		<span>Background:</span>
+		<div id="logo_bg_bset">
+			<a href="#" id="logo_bg_black_button">Black</a>
+			<a href="#" id="logo_bg_white_button">White</a>
+		</div>
+		<span>Color Depth:</span>
+		<div id="logo_phase_bset">
+			<a href="#" id="logo_phase_mono">Mono</a>
+			<a href="#" id="logo_phase_gray">Grayscale</a>
+			<a href="#" id="logo_phase_spot">Spot Color</a>
+			<a href="#" id="logo_phase_full">Full Color</a>
+		</div>
+	
+		<div id="logo_slide_bset">
+			<a href="#" id="slide_control_logo_prev" class="slidecontrol">Intro</a>
+			<a href="#" id="slide_control_logo_next" class="slidecontrol">Layouts</a>
+		</div>
+	</div>
+	<div id="logo_display" class="white">
+		<img id="logo" src="" />
+	</div>
+
+	<div id="logoalt_present">
+		<div id="logoalt_slide_bset">
+			<a href="#" id="slide_control_logoalt_prev" class="slidecontrol">Logo</a>
+			<a href="#" id="slide_control_logoalt_next" class="slidecontrol">T-shirts</a>
+		</div>
+	</div>
+	<div id="logoalt_display">
+		<img id="logoalt_roundel" src="images/logo_roundel_full_on_black.png" />
+		<img id="logoalt_short" src="images/logo_short_full_on_black.png" />
+	</div>
+
+	<div id="shirt_present">
+		<span>Color:</span>
+		<div id="shirt_color_bset">
+			<a href="#" id="shirt_color_black_button">Black</a>
+			<a href="#" id="shirt_color_white_button">White</a>
+		</div>
+		<span>Style:</span>
+		<div id="shirt_style_bset">
+			<a href="#" id="shirt_style_logo">Full Logo</a>
+			<a href="#" id="shirt_style_mark">Mark Only</a>
+		</div>
+	
+		<div id="shirt_slide_bset">
+			<a href="#" id="slide_control_shirt_prev" class="slidecontrol">Layouts</a>
+			<a href="#" id="slide_control_shirt_next" class="slidecontrol">Business Card</a>
+		</div>
+	</div>
+	<div id="shirt_display">
+		<img id="shirt" src="" />
+	</div>
+
+
+	<div id="card_present">
+		<p style="display: inline-block;" />
+		<div id="card_slide_bset">
+			<a href="#" id="slide_control_card_prev" class="slidecontrol">T-shirts</a>
+			<a href="#" id="slide_control_card_next" class="slidecontrol">Finish</a>
+		</div>
+	</div>
+	<div id="card_display">
+		<img id="card" src="images/card_mockup.png" />
+	</div>
+
+
+
+</body>
+</html>
