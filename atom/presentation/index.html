@@ -153,7 +153,7 @@ ul li:before {
 	margin-right: auto;
 	position: relative;
 	top: 15%;
-	box-shadow: .5em .5em 2em rgba(0, 0, 0, .5); 
+	box-shadow: .5em .5em 2em rgba(0, 0, 0, .5);
 }
 #card_display {
 	background-color: #fff;
@@ -189,7 +189,6 @@ for (i in slides) {
 }
 
 delete i;
-		
 
 var setSlide = function() {
 	var me = $(this);
@@ -199,7 +198,6 @@ var setSlide = function() {
 	var i;
 
 	if (dir == 'next') {
-console.log('cur: '+ cur_slide + '; max: ' + max_slide);
 		if (cur_slide == max_slide) {
 			cur_slide = 0;
 		}
@@ -220,7 +218,6 @@ console.log('cur: '+ cur_slide + '; max: ' + max_slide);
 	}
 
 	$('body > *').hide();
-	
 
 	$('body > *[id^=' + target_slide + (cur_slide == 0 ? '' : '_') + ']').show();
 
@@ -240,7 +237,6 @@ var setlogo = function() {
 	if (typeof logo_bg == 'undefined' && typeof logo_phase == 'undefined') {
 		return false;
 	}
-console.log('setLogo; logo_bg: ' + logo_bg + '; logo_phase: ' + logo_phase);
 	var l = $('#logo');
 	
 	l.attr('src', 'images/logo_master_j_' + logo_phase + '_on_' + logo_bg + '.png');
